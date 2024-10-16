@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 interface Props {
-  imageUrl: ImageMetadata;
+  imageUrl: string;
   title: string;
   type: string;
   link: string;
@@ -16,7 +16,7 @@ const { imageUrl, title, type, link, tech } = Astro.props;
   <div
     class="relative overflow-hidden bg-cover rounded-lg cursor-pointer h-64 group"
   >
-    <Image
+    <img
       class="object-cover w-full h-full transition-transform duration-700 transform group-hover:scale-105"
       src={imageUrl}
       alt={title}
