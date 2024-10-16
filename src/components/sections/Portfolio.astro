@@ -1,11 +1,11 @@
 ---
-import Project from '../Project.astro';
-import Diversia from '/public/assets/projects/diversia.webp'
-import Dualiza from '/public/assets/projects/dualiza.ieshlanz.es.webp'
-import SassBlog from '/public/assets/projects/saas-blog-nextjs.vercel.app.webp'
-import RogerCivPortfolio from '/public/assets/projects/rogerciv-portfolio.webp'
-import RentalCar from '/public/assets/projects/rental-cars-test.vercel.app.webp'
-
+import Project from "../Project.astro";
+import Diversia from "/public/assets/projects/diversia.webp";
+import Dualiza from "/public/assets/projects/dualiza.ieshlanz.es.webp";
+import SassBlog from "/public/assets/projects/saas-blog-nextjs.vercel.app.webp";
+import RogerCivPortfolio from "/public/assets/projects/rogerciv-portfolio.webp";
+import RentalCar from "/public/assets/projects/rental-cars-test.vercel.app.webp";
+import { Icon } from "astro-icon/components";
 
 interface Project {
   imageUrl: string;
@@ -15,65 +15,74 @@ interface Project {
   tech?: string[];
 }
 
-const projects : Project[] =  [
+const projects: Project[] = [
   {
-    imageUrl:'/assets/projects/diversia.webp',
-    title: 'Diversia Interiorismo',
-    type: 'Website',
-    link: 'https://diversia-nextjs.vercel.app',
-    tech: ["Nextjs", 'Tailwindcss', 'Prisma','Shadcn']
+    imageUrl: "/assets/projects/diversia.webp",
+    title: "Diversia Interiorismo",
+    type: "Website",
+    link: "https://diversia-nextjs.vercel.app",
+    tech: ["Nextjs", "Tailwindcss", "Prisma", "Shadcn"],
   },
   {
-    imageUrl: '/assets/projects/dualiza.ieshlanz.es.webp',
-    title: 'Dualiza',
-    type: 'Wwebsite',
-    link: 'https://dualiza.ieshlanz.es',
-    tech: ["React", 'Tailwindcss', 'Threejs']
+    imageUrl: "/assets/projects/dualiza.ieshlanz.es.webp",
+    title: "Dualiza",
+    type: "Wwebsite",
+    link: "https://dualiza.ieshlanz.es",
+    tech: ["React", "Tailwindcss", "Threejs"],
   },
   {
-    imageUrl: '/assets/projects/saas-blog-nextjs.vercel.app.webp',
-    title: 'SASS Blog',
-    type: 'Website SASS',
-    link: 'https://saas-blog-nextjs.vercel.app',
-    tech: ["Nextjs", 'Tailwindcss', 'Prisma', 'Stripe','Supabase']
+    imageUrl: "/assets/projects/saas-blog-nextjs.vercel.app.webp",
+    title: "SASS Blog",
+    type: "Website SASS",
+    link: "https://saas-blog-nextjs.vercel.app",
+    tech: ["Nextjs", "Tailwindcss", "Prisma", "Stripe", "Supabase"],
   },
   {
-    imageUrl: '/assets/projects/rogerciv-portfolio.webp',
-    title: 'Portfolio Nextjs',
-    type: 'Portfolio',
-    link: 'https://rogerciv.vercel.app',
-    tech: ["Nextjs", 'Tailwindcss']
+    imageUrl: "/assets/projects/rogerciv-portfolio.webp",
+    title: "Portfolio Nextjs",
+    type: "Portfolio",
+    link: "https://rogerciv.vercel.app",
+    tech: ["Nextjs", "Tailwindcss"],
   },
   {
-    imageUrl: '/assets/projects/rental-cars-test.vercel.app.webp',
-    title: 'Rental Cars',
-    type: 'Website',
-    link: 'https://rental-cars-test.vercel.app',
-    tech: ["Nextjs", 'Tailwindcss', 'Prisma', 'Stripe','Uploadthing']
-  }
+    imageUrl: "/assets/projects/rental-cars-test.vercel.app.webp",
+    title: "Rental Cars",
+    type: "Website",
+    link: "https://rental-cars-test.vercel.app",
+    tech: ["Nextjs", "Tailwindcss", "Prisma", "Stripe", "Uploadthing"],
+  },
 ];
 ---
 
 <section class="bg-background">
-    <div class="container px-6 py-8 mx-auto">
-        <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">
-            Portfolio
-        </h1>
+  <div class="container px-6 py-8 mx-auto">
+    <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">
+      Portfolio
+    </h1>
 
-        <p class="mt-4 text-center text-offset">
-            Discover our range of projects that highlight our expertise in design, development, and innovative solutions.
-        </p>
+    <p class="mt-4 text-center text-offset">
+      Discover some of the projects I've recently worked on. To view the source code and explore more of my work, visit my
+      <a href="https://github.com/tu-usuario" class="text-primary hover:opacity-80 inline-flex items-center">
+        <span>GitHub</span>
+        <Icon name="Github" class="size-5 inline-block ml-1 " />
+      </a>
+    </p>
+    
 
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-            {projects.map(project => (
-                <Project
-                    imageUrl={project.imageUrl}
-                    title={project.title}
-                    type={project.type}
-                    link={project.link}
-                    tech={project.tech}
-                />
-            ))}
-        </div>
+    <div
+      class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3"
+    >
+      {
+        projects.map((project) => (
+          <Project
+            imageUrl={project.imageUrl}
+            title={project.title}
+            type={project.type}
+            link={project.link}
+            tech={project.tech}
+          />
+        ))
+      }
     </div>
+  </div>
 </section>
