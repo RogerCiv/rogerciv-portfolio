@@ -1,0 +1,26 @@
+---
+import CardListSection from "../../CardListSection.astro";
+
+const experiences = [
+  {
+    title: "Desarrollador Web en Prácticas",
+    sub_title: "ATI Soluciones",
+    years: "2024",
+    details: "Prácticas FCT en las que contribuí en la ampliación y mejora del ERP de la empresa colaborando con el resto del equipo, utilizando tecnologías como Laravel, JQUERY, Bootstrap. Implementé una funcionalidad en el sistema de citas para realizar llamadas automáticas con Asterisk, Node.js y Laravel, permitiendo a los usuarios confirmar o cancelar sus citas de manera eficiente."
+  },
+  {
+    title: "Sistemas Microinformáticos y Redes en Prácticas",
+    sub_title: "Delegación Territorial de Medio Ambiente",
+    years: "2022",
+    details: "Prácticas FCT en las que realicé tareas de mantenimiento y reparación de equipos informáticos, instalación de sistemas operativos y configuración de redes informáticas, adquiriendo habilidades y conocimientos necesarios para el soporte informático."
+  },
+  {
+    title: "Técnico en Sistemas Microinformáticos y Redes en Prácticas",
+    sub_title: "MEGA 2 SEGURIDAD S.L",
+    years: "2018",
+    details: "Prácticas FCT en las que realicé tareas de mantenimiento y reparación de equipos informáticos, instalación de sistemas operativos y configuración de redes informáticas, adquiriendo habilidades y conocimientos necesarios para el soporte informático."
+  }
+];
+---
+
+<CardListSection title="Experience" items={experiences} />

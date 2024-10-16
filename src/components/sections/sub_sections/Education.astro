@@ -1,0 +1,29 @@
+---
+import CardListSection from '../../CardListSection.astro';
+
+const education = [
+  {
+    title: "Desarrollo de Aplicaciones Web",
+    sub_title: "IES Hermenegildo Lanz, Granada",
+    years: "2022 - 2024",
+    details: "Obtuve el título de Técnico Superior en Desarrollo de Aplicaciones Web, adquiriendo las bases necesarias y habilidades avanzadas para la programación y desarrollo web."
+  },
+  {
+    title: "Sistemas Microinformáticos y Redes",
+    sub_title: "IES Padre Suarez, Granada",
+    years: "2020 - 2022",
+    details: "Obtuve el título de Técnico en Sistemas Microinformáticos y Redes, adquiriendo las bases necesarias y habilidades avanzadas para comercialización, montaje y reparación de equipos, redes y servicios microinformáticos en general, como parte del soporte informático."
+  }
+  ,
+  {
+    title: "Certificado de Profesionalidad en Sistemas Microinformáticos y Redes",
+    sub_title: "Academia Hermanos Naranjo, Granada",
+    years: "2018",
+    details: "Obtuve el certificado de profesionalidad en Sistemas Microinformáticos y Redes, adquiriendo las bases necesarias y habilidades avanzadas para la comercialización, montaje y reparación de equipos, redes y servicios microinformáticos en general, como parte del soporte informático."
+  }
+
+  
+];
+---
+
+<CardListSection title="Education" items={education} />

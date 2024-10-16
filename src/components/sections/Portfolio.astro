@@ -1,0 +1,71 @@
+---
+import Project from '../Project.astro';
+import Diversia from '../../assets/projects/diversia.webp'
+import Dualiza from '../../assets/projects/dualiza.ieshlanz.es_.webp'
+
+interface Project {
+  imageUrl: ImageMetadata;
+  title: string;
+  type: string;
+  link: string;
+  tech?: string[];
+}
+
+const projects : Project[] =  [
+  {
+    imageUrl:Diversia,
+    title: 'Diversia Interiorismo',
+    type: 'Website',
+    link: 'https://github.com/wasutz/astro-resume-theme',
+    tech: ["Nextjs", 'Tailwindcss', 'Prisma']
+  },
+  {
+    imageUrl: Dualiza,
+    title: 'Dualiza',
+    type: 'Wwebsite',
+    link: 'https://github.com/wasutz/astro-resume-theme'
+  },
+  {
+    imageUrl: Diversia,
+    title: 'paul.com',
+    type: 'Website',
+    link: 'https://github.com/wasutz/astro-resume-theme'
+  },
+  {
+    imageUrl: Diversia,
+    title: 'paul.com',
+    type: 'Website',
+    link: 'https://github.com/wasutz/astro-resume-theme'
+  },
+  {
+    imageUrl: Diversia,
+    title: 'paul.com',
+    type: 'Website',
+    link: 'https://github.com/wasutz/astro-resume-theme'
+  }
+];
+---
+
+<section class="bg-background">
+    <div class="container px-6 py-8 mx-auto">
+        <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">
+            Portfolio
+        </h1>
+
+        <p class="mt-4 text-center text-offset">
+            Discover our range of projects that highlight our expertise in design, development, and innovative solutions.
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+            {projects.map(project => (
+                <Project
+                    imageUrl={project.imageUrl}
+                    title={project.title}
+                    type={project.type}
+                    link={project.link}
+                    tech={project.tech}
+                />
+            ))}
+        </div>
+    </div>
+</section>

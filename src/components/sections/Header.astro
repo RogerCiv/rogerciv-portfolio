@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+import ThemeToggle from "../ThemeToggle.astro";
+
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/rogerciv', icon: 'Github' },
+  { label: 'Twitter', href: 'https://twitter.com/rogerciv', icon: 'Instagram'},
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/rogerciv', icon: 'LinkedIn' }
+];
+---
+
+<header class="bg-background py-4">
+  <div class="container max-w-6xl mx-auto flex justify-between items-center px-4 md:px-8">
+    <!-- Logo -->
+    <div class="text-2xl font-bold">
+      <a href="/" class="hover:text-offset">Roger Civ</a>
+    </div>
+
+    <div class="flex gap-5 items-center">
+      <!-- Social Media Links -->
+      <nav class="hidden sm:flex space-x-4">
+        {socialLinks.map((link) => (
+          <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-offset" aria-label={link.label}>
+            <Icon name={link.icon} class="size-6" />
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="sm:hidden">
+        <button id="menu-btn" class="focus:outline-none" aria-label="Toggle mobile menu">
+          <Icon name="Menu" class="size-6"/>
+        </button>
+      </div>
+      <ThemeToggle />
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden sm:hidden">
+    {socialLinks.map((link) => (
+      <a href={link.href} target="_blank" rel="noopener noreferrer" class="flex items-center px-4 py-2 hover:bg-background-offset">
+        <Icon name={link.icon} class="size-6 mr-2" />
+        {link.label}
+      </a>
+    ))}
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

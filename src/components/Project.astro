@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+interface Props {
+  imageUrl: ImageMetadata;
+  title: string;
+  type: string;
+  link: string;
+  tech?: string[];
+}
+
+const { imageUrl, title, type, link, tech } = Astro.props;
+---
+
+<a href={link} target="_blank" rel="noopener noreferrer" class="block">
+  <div
+    class="relative overflow-hidden bg-cover rounded-lg cursor-pointer h-64 group"
+  >
+    <Image
+      class="object-cover w-full h-full transition-transform duration-700 transform group-hover:scale-105"
+      src={imageUrl}
+      alt={title}
+      width={500}
+      height={300}
+    />
+    <div
+      class="absolute inset-0 flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700
+                opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100"
+    >
+      <h2 class="mt-4 text-xl font-semibold text-white">{title}</h2>
+      <p class="mt-2 text-lg tracking-wider text-primary uppercase">{type}</p>
+      {
+        tech && tech.length > 0 && (
+          <div class="flex flex-wrap mt-4 gap-2">
+            {tech.map((item) => (
+              <div class="flex items-center bg-gray-700 rounded-full px-3 py-1">
+                <Icon
+                  name={item}
+                  class="w-4 h-4 mr-2 text-primary"
+                />
+                <span class="text-xs text-white">{item}</span>
+              </div>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</a>
