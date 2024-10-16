@@ -1,7 +1,11 @@
 ---
 import Project from '../Project.astro';
 import Diversia from '../../assets/projects/diversia.webp'
-import Dualiza from '../../assets/projects/dualiza.ieshlanz.es_.webp'
+import Dualiza from '../../assets/projects/dualiza.ieshlanz.es.webp'
+import SassBlog from '../../assets/projects/saas-blog-nextjs.vercel.app.webp'
+import RogerCivPortfolio from '../../assets/projects/rogerciv-portfolio.webp'
+import RentalCar from '../../assets/projects/rental-cars-test.vercel.app.webp'
+
 
 interface Project {
   imageUrl: ImageMetadata;
@@ -16,32 +20,36 @@ const projects : Project[] =  [
     imageUrl:Diversia,
     title: 'Diversia Interiorismo',
     type: 'Website',
-    link: 'https://github.com/wasutz/astro-resume-theme',
-    tech: ["Nextjs", 'Tailwindcss', 'Prisma']
+    link: 'https://diversia-nextjs.vercel.app',
+    tech: ["Nextjs", 'Tailwindcss', 'Prisma','Shadcn']
   },
   {
     imageUrl: Dualiza,
     title: 'Dualiza',
     type: 'Wwebsite',
-    link: 'https://github.com/wasutz/astro-resume-theme'
+    link: 'https://dualiza.ieshlanz.es',
+    tech: ["React", 'Tailwindcss', 'Threejs']
   },
   {
-    imageUrl: Diversia,
-    title: 'paul.com',
-    type: 'Website',
-    link: 'https://github.com/wasutz/astro-resume-theme'
+    imageUrl: SassBlog,
+    title: 'SASS Blog',
+    type: 'Website SASS',
+    link: 'https://saas-blog-nextjs.vercel.app',
+    tech: ["Nextjs", 'Tailwindcss', 'Prisma', 'Stripe','Supabase']
   },
   {
-    imageUrl: Diversia,
-    title: 'paul.com',
-    type: 'Website',
-    link: 'https://github.com/wasutz/astro-resume-theme'
+    imageUrl: RogerCivPortfolio,
+    title: 'Portfolio Nextjs',
+    type: 'Portfolio',
+    link: 'https://rogerciv.vercel.app',
+    tech: ["Nextjs", 'Tailwindcss']
   },
   {
-    imageUrl: Diversia,
-    title: 'paul.com',
+    imageUrl: RentalCar,
+    title: 'Rental Cars',
     type: 'Website',
-    link: 'https://github.com/wasutz/astro-resume-theme'
+    link: 'https://rental-cars-test.vercel.app',
+    tech: ["Nextjs", 'Tailwindcss', 'Prisma', 'Stripe','Uploadthing']
   }
 ];
 ---
