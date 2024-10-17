@@ -33,7 +33,7 @@ const { imageUrl, title, type, link, tech } = Astro.props;
         tech && tech.length > 0 && (
           <div class="flex flex-wrap mt-4 gap-2">
             {tech.map((item) => (
-              <div class="flex items-center bg-gray-700 rounded-full px-3 py-1">
+              <div class="flex items-center bg-gray-700 rounded-full px-3 py-1 hover:opacity-80">
                 <Icon
                   name={item}
                   class="w-4 h-4 mr-2 text-primary"
