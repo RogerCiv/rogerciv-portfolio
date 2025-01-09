@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+
 interface Props {
   imageUrl: string;
   title: string;
@@ -36,7 +36,7 @@ const { imageUrl, title, type, link, tech } = Astro.props;
               <div class="flex items-center bg-gray-700 rounded-full px-3 py-1 hover:opacity-80">
                 <Icon
                   name={item}
-                  class="w-4 h-4 mr-2 text-primary"
+                  class="w-4 h-4 mr-2"
                 />
                 <span class="text-xs text-white">{item}</span>
               </div>
