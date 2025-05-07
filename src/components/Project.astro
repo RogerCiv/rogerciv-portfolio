@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import Reactrouter2 from "../icons/Reactrouter2.astro";
 
 interface Props {
   imageUrl: string;
@@ -10,6 +11,13 @@ interface Props {
 }
 
 const { imageUrl, title, type, link, tech } = Astro.props;
+
+const getIcon = (techName: string) => {
+  if (techName.toLowerCase() === "react-router") {
+    return Reactrouter2;
+  }
+  return Icon;
+};
 ---
 
 <a href={link} target="_blank" rel="noopener noreferrer" class="block">
@@ -32,15 +40,18 @@ const { imageUrl, title, type, link, tech } = Astro.props;
       {
         tech && tech.length > 0 && (
           <div class="flex flex-wrap mt-4 gap-2">
-            {tech.map((item) => (
-              <div class="flex items-center bg-gray-700 rounded-full px-3 py-1 hover:opacity-80">
-                <Icon
-                  name={item}
-                  class="w-4 h-4 mr-2"
-                />
-                <span class="text-xs text-white">{item}</span>
-              </div>
-            ))}
+            {tech.map((item) => {
+              const IconComponent = getIcon(item);
+              return (
+                <div class="flex items-center bg-gray-700 rounded-full px-3 py-1 hover:opacity-80">
+                  <IconComponent
+                    name={item !== "react-router" ? item : undefined}
+                    class="w-4 h-4 mr-2"
+                  />
+                  <span class="text-xs text-white">{item}</span>
+                </div>
+              );
+            })}
           </div>
         )
       }
