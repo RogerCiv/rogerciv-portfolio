@@ -2,8 +2,17 @@
 import Project from "../Project.astro";
 import { Icon } from "astro-icon/components";
 
+// Import all project images
+import diversiaImg from "../../assets/projects/diversia.webp";
+import dualizaImg from "../../assets/projects/dualiza.ieshlanz.es.webp";
+import nokenImg from "../../assets/projects/noken_vocabulary.webp";
+import illustratorImg from "../../assets/projects/illustrator_web.png";
+import saasImg from "../../assets/projects/saas-blog-nextjs.vercel.app.webp";
+import portfolioImg from "../../assets/projects/rogerciv-portfolio.webp";
+import rentalImg from "../../assets/projects/rental-cars-test.vercel.app.webp";
+
 interface Project {
-  imageUrl: string;
+  imageUrl: ImageMetadata;
   title: string;
   type: string;
   link: string;
@@ -12,7 +21,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    imageUrl: "/assets/projects/diversia.webp",
+    imageUrl: diversiaImg,
     title: "Diversia Interiorismo",
     type: "Website",
     link: "https://www.diversiainteriorismo.com",
@@ -26,42 +35,42 @@ const projects: Project[] = [
     ],
   },
   {
-    imageUrl: "/assets/projects/dualiza.ieshlanz.es.webp",
+    imageUrl: dualizaImg,
     title: "Dualiza",
     type: "Website",
     link: "https://dualiza.ieshlanz.es",
     tech: ["React", "Tailwindcss", "Threejs"],
   },
   {
-    imageUrl: "/assets/projects/noken_vocabulary.webp",
+    imageUrl: nokenImg,
     title: "Noken Vocabulary",
     type: "Website",
     link: "https://noken-vocabulary.vercel.app",
     tech: ["React", "Tailwindcss", "Supabase", "react-router"],
   },
   {
-    imageUrl: "/assets/projects/illustrator_web.png",
+    imageUrl: illustratorImg,
     title: "Illustrator Amelia",
     type: "Website",
     link: "https://noken-vocabulary.vercel.app",
     tech: ["Astro", "Tailwindcss"],
   },
   {
-    imageUrl: "/assets/projects/saas-blog-nextjs.vercel.app.webp",
+    imageUrl: saasImg,
     title: "SASS Blog",
     type: "Website SASS",
     link: "https://saas-blog-nextjs.vercel.app",
     tech: ["Nextjs", "Tailwindcss", "Prisma", "Stripe", "Supabase"],
   },
   {
-    imageUrl: "/assets/projects/rogerciv-portfolio.webp",
+    imageUrl: portfolioImg,
     title: "Portfolio Nextjs",
     type: "Portfolio",
     link: "https://rogerciv.vercel.app",
     tech: ["Nextjs", "Tailwindcss"],
   },
   {
-    imageUrl: "/assets/projects/rental-cars-test.vercel.app.webp",
+    imageUrl: rentalImg,
     title: "Rental Cars",
     type: "Website",
     link: "https://rental-cars-test.vercel.app",

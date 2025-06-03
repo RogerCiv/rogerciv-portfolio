@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import Reactrouter2 from "../icons/Reactrouter2.astro";
 
 interface Props {
-  imageUrl: string;
+  imageUrl: ImageMetadata;
   title: string;
   type: string;
   link: string;
@@ -31,7 +31,7 @@ const getIcon = (techName: string) => {
       alt={title}
       width={500}
       height={300}
-      quality="max"
+      quality="high"
     />
     <div
       class="absolute inset-0 flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700
