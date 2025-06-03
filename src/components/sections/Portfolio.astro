@@ -2,7 +2,6 @@
 import Project from "../Project.astro";
 import { Icon } from "astro-icon/components";
 
-
 interface Project {
   imageUrl: string;
   title: string;
@@ -17,7 +16,14 @@ const projects: Project[] = [
     title: "Diversia Interiorismo",
     type: "Website",
     link: "https://www.diversiainteriorismo.com",
-    tech: ["Nextjs", "Tailwindcss", "Prisma", "Mongodb", "Cloudflare", "Vercel"],
+    tech: [
+      "Nextjs",
+      "Tailwindcss",
+      "Prisma",
+      "Mongodb",
+      "Cloudflare",
+      "Vercel",
+    ],
   },
   {
     imageUrl: "/assets/projects/dualiza.ieshlanz.es.webp",
@@ -32,6 +38,13 @@ const projects: Project[] = [
     type: "Website",
     link: "https://noken-vocabulary.vercel.app",
     tech: ["React", "Tailwindcss", "Supabase", "react-router"],
+  },
+  {
+    imageUrl: "/assets/projects/illustrator_web.png",
+    title: "Illustrator Amelia",
+    type: "Website",
+    link: "https://noken-vocabulary.vercel.app",
+    tech: ["Astro", "Tailwindcss"],
   },
   {
     imageUrl: "/assets/projects/saas-blog-nextjs.vercel.app.webp",
