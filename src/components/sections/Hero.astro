@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from '/assets/heroImage.png'
+import heroImage from '../../assets/heroImage.png'
 
 ---
 
@@ -8,9 +8,13 @@ import heroImage from '/assets/heroImage.png'
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
       <div class="relative flex justify-center">
-        <img class="object-cover w-full h-full rounded-lg"
-          src='/assets/heroImage.png'
+        <Image 
+          class="object-cover w-full h-full rounded-lg"
+          src={heroImage}
           alt="Hero image"
+          width={600}
+          height={600}
+          quality="high"
         />
       </div>
       <div>
