@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import Reactrouter2 from "../icons/Reactrouter2.astro";
 
 interface Props {
@@ -24,12 +25,13 @@ const getIcon = (techName: string) => {
   <div
     class="relative overflow-hidden bg-cover rounded-lg cursor-pointer h-64 group"
   >
-    <img
+    <Image
       class="object-cover w-full h-full transition-transform duration-700 transform group-hover:scale-105"
       src={imageUrl}
       alt={title}
       width={500}
       height={300}
+      quality="max"
     />
     <div
       class="absolute inset-0 flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700
