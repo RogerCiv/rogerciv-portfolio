@@ -3,13 +3,14 @@ import Project from "../Project.astro";
 import { Icon } from "astro-icon/components";
 
 // Import all project images
-import diversiaImg from "../../assets/projects/diversia.webp";
-import dualizaImg from "../../assets/projects/dualiza.ieshlanz.es.webp";
-import nokenImg from "../../assets/projects/noken_vocabulary.webp";
-import illustratorImg from "../../assets/projects/illustrator_web.png";
-import saasImg from "../../assets/projects/saas-blog-nextjs.vercel.app.webp";
-import portfolioImg from "../../assets/projects/rogerciv-portfolio.webp";
-import rentalImg from "../../assets/projects/rental-cars-test.vercel.app.webp";
+import diversiaImg from "../../assets/projects/diversia.avif";
+import dualizaImg from "../../assets/projects/dualiza.avif";
+import nokenImg from "../../assets/projects/noken.avif";
+import illustratorImg from "../../assets/projects/ilustradora.avif";
+import saasImg from "../../assets/projects/saas-blog.avif";
+import portfolioImg from "../../assets/projects/portfolio.avif";
+import rentalImg from "../../assets/projects/rental-cars.avif";
+import webResourcesImg from "../../assets/projects/web-resources.avif";
 
 interface Project {
   imageUrl: ImageMetadata;
@@ -33,6 +34,13 @@ const projects: Project[] = [
       "Cloudflare",
       "Vercel",
     ],
+  },
+  {
+    imageUrl: webResourcesImg,
+    title: "Web Resources",
+    type: "Website",
+    link: "https://web-recursos.vercel.app",
+    tech: ["Astro", "Tailwindcss"],
   },
   {
     imageUrl: dualizaImg,
