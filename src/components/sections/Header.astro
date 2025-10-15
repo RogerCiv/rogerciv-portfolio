@@ -6,27 +6,41 @@ const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/rogerciv', icon: 'Github' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/rogerciv', icon: 'LinkedIn' }
 ];
+
+const navLinks = [
+  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Experience', href: '#experience' }
+];
 ---
 
 <header class="bg-background py-4">
   <div class="container max-w-6xl mx-auto flex justify-between items-center px-4 md:px-8">
     <!-- Logo -->
     <div class="text-2xl font-bold">
-      <a href="/" class="hover:text-offset">Roger Civ</a>
+      <a href="/" class="hover:text-primary">Roger Civ</a>
     </div>
 
     <div class="flex gap-5 items-center">
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex space-x-6">
+        {navLinks.map((link) => (
+          <a href={link.href} class="hover:text-primary  hover:scale-105 transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
       <!-- Social Media Links -->
       <nav class="hidden sm:flex space-x-4">
         {socialLinks.map((link) => (
-          <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-offset" aria-label={link.label}>
+          <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-primary hover:scale-105 active:scale-95 transition-colors" aria-label={link.label}>
             <Icon name={link.icon} class="size-6" />
           </a>
         ))}
       </nav>
 
       <!-- Mobile Menu Button -->
-      <div class="sm:hidden">
+      <div class="md:hidden">
         <button id="menu-btn" class="focus:outline-none" aria-label="Toggle mobile menu">
           <Icon name="Menu" class="size-6"/>
         </button>
@@ -35,13 +49,21 @@ const socialLinks = [
     </div>
   </div>
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden sm:hidden">
-    {socialLinks.map((link) => (
-      <a href={link.href} target="_blank" rel="noopener noreferrer" class="flex items-center px-4 py-2 hover:bg-background-offset">
-        <Icon name={link.icon} class="size-6 mr-2" />
-        {link.label}
-      </a>
-    ))}
+  <div id="mobile-menu" class="hidden md:hidden">
+    <div class="border-t border-gray-200 dark:border-gray-700">
+      {navLinks.map((link) => (
+        <a href={link.href} class="block px-4 py-3 hover:bg-background-offset transition-colors">
+          {link.label}
+        </a>
+      ))}
+      <div class="border-t border-gray-200 dark:border-gray-700 my-2"></div>
+      {socialLinks.map((link) => (
+        <a href={link.href} target="_blank" rel="noopener noreferrer" class="flex items-center px-4 py-3 hover:bg-background-offset transition-colors">
+          <Icon name={link.icon} class="size-6 mr-2" />
+          {link.label}
+        </a>
+      ))}
+    </div>
   </div>
 </header>
 
@@ -51,5 +73,24 @@ const socialLinks = [
 
   menuBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+      if (href) {
+        const target = document.querySelector(href);
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 </script>
