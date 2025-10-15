@@ -33,7 +33,7 @@ const navLinks = [
       <!-- Social Media Links -->
       <nav class="hidden sm:flex space-x-4">
         {socialLinks.map((link) => (
-          <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-primary hover:scale-105 active:scale-95 transition-colors" aria-label={link.label}>
+          <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:text-primary hover:scale-105 active:scale-95 transition-colors duration-300" aria-label={link.label}>
             <Icon name={link.icon} class="size-6" />
           </a>
         ))}
