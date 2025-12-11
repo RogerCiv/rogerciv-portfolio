@@ -11,6 +11,8 @@ import saasImg from "../../assets/projects/saas-blog.avif";
 import portfolioImg from "../../assets/projects/portfolio.avif";
 import rentalImg from "../../assets/projects/rental-cars.avif";
 import webResourcesImg from "../../assets/projects/web-resources.avif";
+import japanesePortfolioImg from "../../assets/projects/portfolio-japanese.avif";
+import nokenStudyImg from "../../assets/projects/noken-study.avif";
 
 interface Project {
   imageUrl: ImageMetadata;
@@ -19,7 +21,7 @@ interface Project {
   link: string;
   tech?: string[];
 }
-
+//https://noken-study.vercel.app/
 const projects: Project[] = [
   {
     imageUrl: diversiaImg,
@@ -34,6 +36,20 @@ const projects: Project[] = [
       "Cloudflare",
       "Vercel",
     ],
+  },
+  {
+    imageUrl: japanesePortfolioImg,
+    title: "Japanese Portfolio",
+    type: "Portfolio",
+    link: "https://japanese-portfolio.vercel.app/",
+    tech: ["Nextjs", "Tailwindcss", "Groq"],
+  },
+  {
+    imageUrl: nokenStudyImg,
+    title: "Noken Study",
+    type: "Website",
+    link: "https://noken-study.vercel.app",
+    tech: ["Nextjs", "Tailwindcss"], 
   },
   {
     imageUrl: webResourcesImg,
